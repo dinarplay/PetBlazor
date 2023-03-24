@@ -1,0 +1,36 @@
+﻿@inherits HeaderModel
+
+<div class="header">
+    <div class="header__menu">
+        <div class="header__menu__left">
+            <NavLink class="nav-link" href="/" Match="@NavLinkMatch.All">Главная</NavLink>
+            <NavLink class="nav-link" href="Agecalc">Age calc</NavLink>
+            <NavLink class="nav-link" href="Passgen">Pass gen</NavLink>
+            <NavLink class="nav-link" href="Parser">Parser</NavLink>
+            <NavLink class="nav-link" href="Bind">Bind</NavLink>
+            <NavLink class="nav-link" href="Loading">Loading</NavLink>
+            <NavLink class="nav-link" href="Timer">Timer</NavLink>
+            <NavLink class="nav-link" href="Widgets">Widgets</NavLink>
+            <NavLink class="nav-link" href="Edit">Edit</NavLink>
+        </div>
+
+        <div class="header__menu__right">
+
+            <form class="header__menu__right__form">
+                <input class="header__menu__right__form__input" type="search" placeholder="Поиск по сайту..." aria-label="Поиск">
+            </form>
+
+            @if (isAuth)
+            {
+                <NavLink class="nav-link" href="About">@Name</NavLink>
+
+                <NavLink class="nav-link" href="Exit">Exit</NavLink>
+            }
+            else
+            {
+                <NavLink class="nav-link" href="Sign/In">Log in</NavLink>
+                <NavLink class="nav-link" href="Sign/Up">Sign up</NavLink>
+            }
+        </div>
+    </div>
+</div>

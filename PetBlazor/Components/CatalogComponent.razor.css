@@ -1,0 +1,70 @@
+.catalog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catalog__block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.catalog__block__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    width: 150px;
+}
+.catalog__block__item label{
+    text-align: center;
+}
+.catalog__block__item input{
+    border: 1px solid black;
+    width: 70px;
+    margin: auto;
+}
+.catalog__block__item__buy-but:hover {
+    background-color: #cfddad;
+}
+.catalog__block__item__buy-but:active {
+    background-color: #a4af89;
+}
+
+.headers > div{
+    border: 2px solid black;
+    border-radius: 7px;
+}
+.headers > div:hover{
+    background-color: #bebebe;
+}
+.headers > div:active{
+    background-color: #d9cfcf;
+}
+
+
+
+
+
+
+.spinner {
+    border: 16px solid silver;
+    border-top: 16px solid #337AB7;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top: 40%;
+    left: 55%;
+    position: absolute;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}

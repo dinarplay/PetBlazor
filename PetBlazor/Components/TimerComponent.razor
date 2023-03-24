@@ -1,0 +1,13 @@
+﻿@page "/timer"
+@inherits TimerModel
+
+<div class="timer">
+    <div class="timer__block">
+        <button @onclick="StartTimer">Start</button>
+        <button @onclick="PauseTimer">Pause</button>
+    </div>
+
+    <div class="timer__block">
+        <span class="timer__block__result">@currentMin:@currentSec</span>
+    </div>
+</div>

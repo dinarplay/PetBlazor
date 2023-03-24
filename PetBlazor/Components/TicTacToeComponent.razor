@@ -1,0 +1,29 @@
+﻿@page "/ttToe"
+@inherits TicTacToeModel
+
+<div class="game">
+    OFFLINE MODE
+    <div class="game__function">
+        <button @onclick="ClearGame">Сброс</button>
+    </div>
+    <div class="game__board">
+
+         <div class="game__board__row">
+            <div @onclick="() => CheckWinner(0)" class="game__board__row__column">@arrOfCells[0]</div>
+            <div @onclick="() => CheckWinner(1)" class="game__board__row__column">@arrOfCells[1]</div>
+            <div @onclick="() => CheckWinner(2)" class="game__board__row__column">@arrOfCells[2]</div>
+        </div>
+         <div class="game__board__row">
+            <div @onclick="() => CheckWinner(3)" class="game__board__row__column">@arrOfCells[3]</div>
+            <div @onclick="() => CheckWinner(4)" class="game__board__row__column">@arrOfCells[4]</div>
+            <div @onclick="() => CheckWinner(5)" class="game__board__row__column">@arrOfCells[5]</div>
+        </div>
+         <div class="game__board__row">
+            <div @onclick="() => CheckWinner(6)" class="game__board__row__column">@arrOfCells[6]</div>
+            <div @onclick="() => CheckWinner(7)" class="game__board__row__column">@arrOfCells[7]</div>
+            <div @onclick="() => CheckWinner(8)" class="game__board__row__column">@arrOfCells[8]</div>
+        </div>
+        
+        @result
+    </div>
+</div>

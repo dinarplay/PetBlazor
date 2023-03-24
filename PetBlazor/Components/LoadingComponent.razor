@@ -1,0 +1,18 @@
+﻿@page "/loading"
+@inherits LoadingModel
+
+<h3>LoadingComponent</h3>
+
+@if (Employees == null)
+{
+        <div class="spinner"></div>
+}
+else
+{
+    <div class="card-deck">
+        @foreach (var item in Employees)
+        {
+            <span>@item</span>
+        }
+    </div>
+}

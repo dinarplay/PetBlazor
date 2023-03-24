@@ -1,0 +1,45 @@
+﻿@page "/bind"
+@inherits BindExplorerModel
+
+<input @bind="someValue"/>
+<p>@someValue</p>
+
+<input @bind-value="anotherValue"/>
+<p>@anotherValue</p>
+
+
+
+<input @bind="Message" @bind:event="oninput"/>
+<span>@Message</span>
+
+<span @onclick="CalcCoords">@coordinations</span>
+
+
+<button @onclick="(MouseEventArgs e) => Click(e.ScreenX)">@text</button>
+
+<hr />
+<button @onclick="LinkEventCallback">CLI-I-I-ICK!</button>
+
+<button @onclick="LinkEventCallbackWithT">CLI-I-I-ICK(T)!</button>
+
+<button @onclick="() => LinkEventCallbackWithArbitraty.InvokeAsync(data)">CLI-I-I-ICK(Arb)!</button>
+
+<hr />
+<a href="/loading" @onclick:preventDefault @onclick="SomeFunc">to loading @SomeText</a>
+
+<input @bind="bl1" type="checkbox"/>
+<input @bind="bl2" type="checkbox" />
+<input @bind="bl3" type="checkbox" />
+
+@if (bl1)
+{
+    <h1>bl1</h1>
+}
+@if (bl2)
+{
+    <h1>bl2</h1>
+}
+@if (bl3)
+{
+    <h1>bl3</h1>
+}

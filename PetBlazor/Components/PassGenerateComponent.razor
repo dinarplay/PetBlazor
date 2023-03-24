@@ -1,0 +1,29 @@
+﻿@page "/Passgen"
+@inherits PassGenerateModel
+
+<div class="pass-gen">
+    <div class="pass-gen__block">
+
+        <div class="pass-gen__block__checkboxs">
+            <input class="pass-gen__block__checkboxs__input" type="number" @bind-value="passCount"/>
+            <div class="pass-gen__block__checkboxs__section">
+                <label>Caps</label>
+                <input type="checkbox" checked @bind-value=isCaps/>
+            </div>
+            <div class="pass-gen__block__checkboxs__section">
+                <label>Numbers</label>
+                <input type="checkbox" checked @bind-value="isNumbers"/>
+            </div>
+            <div class="pass-gen__block__checkboxs__section">
+                <label>Symbols</label>
+                <input type="checkbox" checked @bind-value="isSymbols"/>
+            </div>
+        </div>
+
+        <button @onclick="GetPass">Generate</button>
+
+    </div>
+    <span class="pass-gen__result">@passResult</span>
+
+</div>
+

@@ -1,0 +1,38 @@
+﻿@page "/bucket"
+@inherits BucketModel
+
+<div class="catalog">    
+
+    <div class="catalog__block headers">
+        <div class="catalog__block__item">
+            <label>Название</label>
+        </div>
+        <div class="catalog__block__item">
+            <label>Категория</label>
+        </div>
+        <div class="catalog__block__item">
+            <label>Производитель</label>
+        </div>
+        <div class="catalog__block__item">
+            <label>Количество</label>
+        </div>
+    </div>
+
+    @foreach (var item in buckets)
+    {
+        <div class="catalog__block">
+            <div class="catalog__block__item">
+                <label>@item.Product.Name</label>
+            </div>
+            <div class="catalog__block__item">
+                <label>@item.Product.Category.Name</label>
+            </div>
+            <div class="catalog__block__item">
+                <label>@item.Product.Manufacturer.Name</label>
+            </div>
+            <div class="catalog__block__item">
+                <input min="0" type="number" oninput="validity.valid||(value='');" @bind="item.Count" />
+            </div>
+        </div>
+    }
+</div>

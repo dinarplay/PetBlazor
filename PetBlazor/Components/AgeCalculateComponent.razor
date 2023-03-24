@@ -1,0 +1,13 @@
+﻿@page "/Agecalc"
+@inherits AgeCalculateModel
+
+<div class="age-calc">
+
+    <div class="age-calc__block">
+        <input type="date" @bind="dateOnly"/>
+        <button @onclick="GetAge">Calculate</button>
+    </div>
+    <span class="age-calc__result">@ageResult</span>
+
+    <span>@ChildContent</span>
+</div>

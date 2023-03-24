@@ -1,0 +1,59 @@
+﻿@page "/edit"
+@inherits EditExplorerModel
+
+<EditForm Model="user" OnValidSubmit="ValSubmit" OnInvalidSubmit="InvalSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label class="label-block" for="Email">
+        Email
+        <InputText @bind-Value="user.Email"></InputText>
+        <ValidationMessage For="@(() => user.Email)" />
+    </label>
+    <label class="label-block" for="Password">
+        Password
+        <InputText @bind-Value="user.Password"></InputText>
+        <ValidationMessage For="@(() => user.Password)" />
+    </label>
+    <label class="label-block" for="PasswordConfirm">
+        Confirm Password
+        <InputText @bind-Value="user.PasswordConfirm"></InputText>
+        <ValidationMessage For="@(() => user.PasswordConfirm)" />
+    </label>
+    <label class="label-block" for="Name">
+        Name
+        @*<input @bind="user.Name" type="text" />*@
+        <InputText @bind-Value="user.Name"></InputText>
+        <ValidationMessage For="@(() => user.Name)" />
+    </label>
+    <button type="submit">Потвердить</button>
+</EditForm>
+
+
+<EditForm EditContext="editContext" OnSubmit="Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label class="label-block" for="Email">
+        Email
+        <InputText @bind-Value="user.Email"></InputText>
+        <ValidationMessage For="@(() => user.Email)" />
+    </label>
+    <label class="label-block" for="Password">
+        Password
+        <InputText @bind-Value="user.Password"></InputText>
+        <ValidationMessage For="@(() => user.Password)" />
+    </label>
+    <label class="label-block" for="PasswordConfirm">
+        Confirm Password
+        <InputText @bind-Value="user.PasswordConfirm"></InputText>
+        <ValidationMessage For="@(() => user.PasswordConfirm)" />
+    </label>
+    <label class="label-block" for="Name">
+        Name
+        @*<input @bind="user.Name" type="text" />*@
+        <InputText @bind-Value="user.Name"></InputText>
+        <ValidationMessage For="@(() => user.Name)" />
+    </label>
+    <button type="submit" disabled="@isFormValid">Потвердить</button>
+</EditForm>

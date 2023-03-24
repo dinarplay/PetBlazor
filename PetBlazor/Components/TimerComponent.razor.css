@@ -1,0 +1,23 @@
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: gainsboro;
+    padding: 5px;
+    align-items: center;
+}
+
+.timer__block {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.timer__block__result {
+    text-align: center;
+    background-color: white;
+    width: 80px;
+    padding: 5px;
+}

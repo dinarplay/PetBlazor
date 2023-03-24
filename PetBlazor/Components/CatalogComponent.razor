@@ -1,0 +1,82 @@
+﻿@page "/catalog"
+@inherits CatalogModel
+@implements IDisposable
+
+@if (tempProds == null || tempManufs == null || tempCategs == null)
+{
+        <div class="spinner"></div>
+}
+else
+{
+
+<div class="catalog">
+    <div class="catalog__block">
+
+        <div class="catalog__block__item">
+            <label>Тип продукта</label>
+            <select value="@firstOption" @onchange="(ChangeEventArgs e) => ShowCatalog(e, true)">
+                <option value="All">Все</option>
+                @foreach (var item in tempCategs)
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="catalog__block__item">
+            <label>Производитель</label>
+            <select value="@secondOption" @onchange="(ChangeEventArgs e) => ShowCatalog(e, false)">
+                <option value="All">Все</option>
+                @foreach (var item in tempManufs)
+                {
+                    <option value="@item.Name">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    @firstOption
+    @secondOption
+
+    @*<div class="catalog__block">
+        <div class="catalog__block__item">
+            <input class="catalog__block__item__buy-but" value="Buy" type="submit" @onclick="Buy"/>
+        </div>
+    </div>*@
+
+    <div class="catalog__block headers">
+            <div class="catalog__block__item">
+                <label @onclick="SortOfName">Название</label>
+            </div>
+            <div class="catalog__block__item">
+                <label @onclick="SortOfCategory">Категория</label>
+            </div>
+            <div class="catalog__block__item">
+                <label @onclick="SortOfManuf">Производитель</label>
+            </div>
+            <div class="catalog__block__item">
+                <label @onclick="SortOfCount">Количество</label>
+            </div>
+     </div>
+
+    @foreach (var item in tempProds)
+    {
+        <div class="catalog__block">
+            <div class="catalog__block__item">
+                <label>@item.Name</label>
+            </div>
+            <div class="catalog__block__item">
+                <label>@item.Category.Name</label>
+            </div>
+            <div class="catalog__block__item">
+                <label>@item.Manufacturer.Name</label>
+            </div>
+            <div class="catalog__block__item">
+                <input min="0" type="number" oninput="validity.valid||(value='');" @bind="item.Count" />
+            </div>
+        </div>
+    }
+    <button @onclick="ToBucket">Корзина</button>
+</div>
+
+}

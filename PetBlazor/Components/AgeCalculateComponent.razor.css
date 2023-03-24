@@ -1,0 +1,17 @@
+
+.age-calc {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: gainsboro;
+    padding: 5px;
+}
+
+.age-calc__block{
+    display: flex;
+    justify-content: space-around;
+}
+
+.age-calc__result{
+    text-align: center;
+}

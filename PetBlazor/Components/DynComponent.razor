@@ -1,0 +1,15 @@
+﻿@page "/widgets"
+@inherits DynModel
+@*
+<input @bind="showParser" type="checkbox" />
+<input @bind="showPassGen" type="checkbox" />*@
+
+<EditForm Model="widget">
+    <InputCheckbox @bind-Value="widget.ShowPassGen"></InputCheckbox>
+    <InputCheckbox @bind-Value="widget.ShowParser"></InputCheckbox>
+</EditForm>
+
+@foreach (var widgetType in widget.widgets)
+{
+    <DynamicComponent Type="@widgetType" />
+}

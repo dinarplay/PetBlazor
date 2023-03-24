@@ -1,0 +1,17 @@
+﻿.footer{
+    grid-area: footer;
+    background-color: var(--gray-two);
+    display: flex;
+    justify-content: space-around;
+    min-height: 68px;
+}
+.footer__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer__block span{
+    color: white;
+}
