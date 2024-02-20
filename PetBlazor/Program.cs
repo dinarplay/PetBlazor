@@ -32,6 +32,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+1
+    2
+    33
+
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
