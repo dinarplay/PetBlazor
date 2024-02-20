@@ -31,12 +31,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+1
 
+    2
+
+    3
 app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
-app.MapFallbackToPage("/_Host");
-app.MapFallbackToPage("/_Host");
-app.MapFallbackToPage("/_Host");
 app.MapFallbackToPage("/_Host");
 
 app.Run();
